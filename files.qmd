@@ -1,0 +1,7 @@
+# File Handling
+
+1. loop over a directory's files
+    * read each file
+    * edit each file
+    * add each edited file to an overall dataset
+2. export the overall dataset

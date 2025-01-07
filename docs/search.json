@@ -20,13 +20,23 @@
     ]
   },
   {
+    "objectID": "files.html",
+    "href": "files.html",
+    "title": "2  File Handling",
+    "section": "",
+    "text": "loop over a directory’s files\n\nread each file\nedit each file\nadd each edited file to an overall dataset\n\nexport the overall dataset",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "3  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {

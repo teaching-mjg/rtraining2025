@@ -9,8 +9,10 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - files.qmd
     - summary.qmd
     - references.qmd
+    
 
 bibliography: references.bib
 
