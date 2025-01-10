@@ -194,12 +194,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link active" data-scroll-target="#descriptive-statistics"><span class="header-section-number">2.1</span> Descriptive statistics</a></li>
   <li><a href="#aggregation" id="toc-aggregation" class="nav-link" data-scroll-target="#aggregation"><span class="header-section-number">2.2</span> Aggregation</a></li>
-  <li><a href="#example-with-code" id="toc-example-with-code" class="nav-link" data-scroll-target="#example-with-code"><span class="header-section-number">2.3</span> Example with Code</a>
-  <ul class="collapse">
-  <li><a href="#participant-means" id="toc-participant-means" class="nav-link" data-scroll-target="#participant-means"><span class="header-section-number">2.3.1</span> Participant means</a></li>
-  <li><a href="#condition-means" id="toc-condition-means" class="nav-link" data-scroll-target="#condition-means"><span class="header-section-number">2.3.2</span> Condition means</a></li>
-  </ul></li>
-  <li><a href="#inferential" id="toc-inferential" class="nav-link" data-scroll-target="#inferential"><span class="header-section-number">2.4</span> Inferential</a></li>
+  <li><a href="#example-with-code" id="toc-example-with-code" class="nav-link" data-scroll-target="#example-with-code"><span class="header-section-number">2.3</span> Example with Code</a></li>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="header-section-number">2.4</span> Inferential statistics</a></li>
   </ul>
 </nav>
     </div>
@@ -249,202 +245,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>raw data</strong></li>
 </ul>
 <div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">participant</th>
-<th style="text-align: left;">condition</th>
-<th style="text-align: right;">trial</th>
-<th style="text-align: right;">score</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">6.463973</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">15.977798</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8.770561</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">17.777331</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">18.868878</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1.865573</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">11.034004</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">17.955962</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">11.477265</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.675680</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">19.179834</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9.613349</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">participant =</span> <span class="fu">as_factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Adam"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>), <span class="at">each=</span><span class="dv">4</span>)), </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">condition =</span> <span class="fu">as_factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"drug"</span>, <span class="st">"placebo"</span>), <span class="at">each=</span><span class="dv">2</span>, <span class="at">times=</span><span class="dv">3</span>)),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">trial =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">times=</span><span class="dv">6</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">score =</span> <span class="fu">sample</span>(<span class="dv">25</span><span class="sc">:</span><span class="dv">50</span>, <span class="dv">12</span>, <span class="at">replace=</span>F)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">score=</span><span class="fu">ifelse</span>(condition<span class="sc">==</span><span class="st">"drug"</span>, score<span class="sc">+</span><span class="dv">20</span>, score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 4
+   participant condition trial score
+   &lt;fct&gt;       &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;
+ 1 Adam        drug          1    65
+ 2 Adam        drug          2    59
+ 3 Adam        placebo       1    30
+ 4 Adam        placebo       2    48
+ 5 Bob         drug          1    52
+ 6 Bob         drug          2    61
+ 7 Bob         placebo       1    50
+ 8 Bob         placebo       2    36
+ 9 Charlie     drug          1    53
+10 Charlie     drug          2    55
+11 Charlie     placebo       1    25
+12 Charlie     placebo       2    27</code></pre>
 </div>
 </div>
 <ul>
 <li><strong>participant means</strong>: a single value per-condition for each participant, collapsing over trials</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(participant, condition) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_score=</span><span class="fu">mean</span>(score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>participant_means <span class="ot">=</span> raw_data <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(participant, condition) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_score=</span><span class="fu">mean</span>(score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">participant</th>
-<th style="text-align: left;">condition</th>
-<th style="text-align: right;">mean_score</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">11.22089</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">13.27395</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">10.36723</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">14.49498</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">10.57647</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">14.39659</td>
-</tr>
-</tbody>
-</table>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   participant [3]
+  participant condition mean_score
+  &lt;fct&gt;       &lt;fct&gt;          &lt;dbl&gt;
+1 Adam        drug            62  
+2 Adam        placebo         39  
+3 Bob         drug            56.5
+4 Bob         placebo         43  
+5 Charlie     drug            54  
+6 Charlie     placebo         26  </code></pre>
 </div>
 </div>
 <ul>
 <li><strong>condition means</strong>: a single value for each condition, collapsing over participants</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(condition) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">grand_mean_score=</span><span class="fu">mean</span>(mean_score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>condition_means <span class="ot">=</span> participant_means <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(condition) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">grand_mean_score=</span><span class="fu">mean</span>(mean_score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  condition grand_mean_score
+  &lt;fct&gt;                &lt;dbl&gt;
+1 drug                  57.5
+2 placebo               36  </code></pre>
+</div>
+</div>
+</section>
+<section id="inferential-statistics" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">2.4</span> Inferential statistics</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ez)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ANOVA_OUTPUT <span class="ot">=</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ezANOVA</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> participant_means,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">dv =</span> mean_score,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">wid =</span> participant,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">within =</span> condition</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ANOVA_OUTPUT<span class="sc">$</span>ANOVA <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>ges) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">row.names =</span> F, <span class="at">digits=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: left;">condition</th>
-<th style="text-align: right;">grand_mean_score</th>
+<th style="text-align: left;">Effect</th>
+<th style="text-align: right;">DFn</th>
+<th style="text-align: right;">DFd</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: left;">p&lt;.05</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">AAA</td>
-<td style="text-align: right;">10.72153</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">B</td>
-<td style="text-align: right;">14.05517</td>
+<td style="text-align: left;">condition</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">25.5622</td>
+<td style="text-align: right;">0.037</td>
+<td style="text-align: left;">*</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<section id="participant-means" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="participant-means"><span class="header-section-number">2.3.1</span> Participant means</h3>
-<p>Even if you only want “condition means”, for descriptive purposes, you will need to aggregate over trials and conditions separately for each participant first, to get “participant menas”.</p>
-<p>You will also need “participant means” if you want to proceed to inferential analysis<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>For example, if the inferential test is within-subjects ANOVA, you will want to calculate a mean for each condition for each participant, and submit the aggregated data (instead of the raw data) to ANOVA.</p>
-</section>
-<section id="condition-means" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="condition-means"><span class="header-section-number">2.3.2</span> Condition means</h3>
-<p>Maybe now that you have per-participant means for each condition you want to report condition means as a way of describing the pattern in the data separately from submitting the data to inferential statistics.</p>
-<ul>
-<li>You probably need further iterations of <code>group_by()</code> <code>%&gt;%</code> <code>summarise()</code></li>
-</ul>
-</section>
-</section>
-<section id="inferential" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="inferential"><span class="header-section-number">2.4</span> Inferential</h2>
-<p>After performing any</p>
-<p>Here we will use simple regression – <code>lm()</code> – as the example analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>participant_means, <span class="fu">aes</span>(<span class="at">y=</span>mean_score, <span class="at">x=</span>condition, <span class="at">color=</span>condition))<span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#geom_violin()+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data=</span>mean_cl_normal)<span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="at">base_size=</span><span class="dv">14</span>)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>unless you are going to use mixed effects models in which case you would typically submit the raw data to analysis<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->

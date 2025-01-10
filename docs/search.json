@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R Training 2025",
     "section": "",
-    "text": "Preface\n\nThis book constitutes the materials for a 2025 training session.",
+    "text": "Preface\n\nThis book constitutes the materials for a 2025 training session.\n\nsuppressPackageStartupMessages(library(tidyverse))",
     "crumbs": [
       "Preface"
     ]
@@ -194,7 +194,17 @@
     "href": "analysis.html#example-with-code",
     "title": "2  Analysis",
     "section": "2.3 Example with Code",
-    "text": "2.3 Example with Code\n\nraw data\n\n\n\n\n\n\nparticipant\ncondition\ntrial\nscore\n\n\n\n\n1\nAAA\n1\n6.463973\n\n\n1\nAAA\n2\n15.977798\n\n\n1\nB\n1\n8.770561\n\n\n1\nB\n2\n17.777331\n\n\n2\nAAA\n1\n18.868878\n\n\n2\nAAA\n2\n1.865573\n\n\n2\nB\n1\n11.034004\n\n\n2\nB\n2\n17.955962\n\n\n3\nAAA\n1\n11.477265\n\n\n3\nAAA\n2\n9.675680\n\n\n3\nB\n1\n19.179834\n\n\n3\nB\n2\n9.613349\n\n\n\n\n\n\nparticipant means: a single value per-condition for each participant, collapsing over trials\n\n\ndat = dat %&gt;% \n  group_by(participant, condition) %&gt;% \n  summarise(mean_score=mean(score))\n\n\n\n\n\n\nparticipant\ncondition\nmean_score\n\n\n\n\n1\nAAA\n11.22089\n\n\n1\nB\n13.27395\n\n\n2\nAAA\n10.36723\n\n\n2\nB\n14.49498\n\n\n3\nAAA\n10.57647\n\n\n3\nB\n14.39659\n\n\n\n\n\n\ncondition means: a single value for each condition, collapsing over participants\n\n\ndat = dat %&gt;% \n  group_by(condition) %&gt;% \n  summarise(grand_mean_score=mean(mean_score))\n\n\n\n\n\n\ncondition\ngrand_mean_score\n\n\n\n\nAAA\n10.72153\n\n\nB\n14.05517\n\n\n\n\n\n\n2.3.1 Participant means\nEven if you only want “condition means”, for descriptive purposes, you will need to aggregate over trials and conditions separately for each participant first, to get “participant menas”.\nYou will also need “participant means” if you want to proceed to inferential analysis1.\nFor example, if the inferential test is within-subjects ANOVA, you will want to calculate a mean for each condition for each participant, and submit the aggregated data (instead of the raw data) to ANOVA.\n\n\n2.3.2 Condition means\nMaybe now that you have per-participant means for each condition you want to report condition means as a way of describing the pattern in the data separately from submitting the data to inferential statistics.\n\nYou probably need further iterations of group_by() %&gt;% summarise()",
+    "text": "2.3 Example with Code\n\nraw data\n\n\nset.seed(2)\nraw_data &lt;-\n  tibble(\n    participant = as_factor(rep(c(\"Adam\", \"Bob\", \"Charlie\"), each=4)), \n    condition = as_factor(rep(c(\"drug\", \"placebo\"), each=2, times=3)),\n    trial = rep(c(1,2), times=6),\n    score = sample(25:50, 12, replace=F)\n    ) %&gt;% \n  mutate(score=ifelse(condition==\"drug\", score+20, score))\n\n\n\n# A tibble: 12 × 4\n   participant condition trial score\n   &lt;fct&gt;       &lt;fct&gt;     &lt;dbl&gt; &lt;dbl&gt;\n 1 Adam        drug          1    65\n 2 Adam        drug          2    59\n 3 Adam        placebo       1    30\n 4 Adam        placebo       2    48\n 5 Bob         drug          1    52\n 6 Bob         drug          2    61\n 7 Bob         placebo       1    50\n 8 Bob         placebo       2    36\n 9 Charlie     drug          1    53\n10 Charlie     drug          2    55\n11 Charlie     placebo       1    25\n12 Charlie     placebo       2    27\n\n\n\nparticipant means: a single value per-condition for each participant, collapsing over trials\n\n\nparticipant_means = raw_data %&gt;% \n  group_by(participant, condition) %&gt;% \n  summarise(mean_score=mean(score))\n\n\n\n# A tibble: 6 × 3\n# Groups:   participant [3]\n  participant condition mean_score\n  &lt;fct&gt;       &lt;fct&gt;          &lt;dbl&gt;\n1 Adam        drug            62  \n2 Adam        placebo         39  \n3 Bob         drug            56.5\n4 Bob         placebo         43  \n5 Charlie     drug            54  \n6 Charlie     placebo         26  \n\n\n\ncondition means: a single value for each condition, collapsing over participants\n\n\ncondition_means = participant_means %&gt;% \n  group_by(condition) %&gt;% \n  summarise(grand_mean_score=mean(mean_score))\n\n\n\n# A tibble: 2 × 2\n  condition grand_mean_score\n  &lt;fct&gt;                &lt;dbl&gt;\n1 drug                  57.5\n2 placebo               36",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#inferential-statistics",
+    "href": "analysis.html#inferential-statistics",
+    "title": "2  Analysis",
+    "section": "2.4 Inferential statistics",
+    "text": "2.4 Inferential statistics\n\nlibrary(ez)\n\n\nANOVA_OUTPUT = \n  ezANOVA(\n    data = participant_means,\n    dv = mean_score,\n    wid = participant,\n    within = condition\n  )\n\n\nANOVA_OUTPUT$ANOVA %&gt;% select(-ges) %&gt;% kable(row.names = F, digits=4)\n\n\n\n\nEffect\nDFn\nDFd\nF\np\np&lt;.05\n\n\n\n\ncondition\n1\n2\n25.5622\n0.037\n*\n\n\n\n\n\n\nggplot(data=participant_means, aes(y=mean_score, x=condition, color=condition))+\n  #geom_violin()+\n  stat_summary(fun.data=mean_cl_normal)+\n  theme_bw(base_size=14)+\n  theme(panel.grid=element_blank())",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
     ]
