@@ -24,7 +24,7 @@
     "href": "files.html",
     "title": "2  File Handling",
     "section": "",
-    "text": "loop over a directory’s files\n\nread each file\nedit each file\nadd each edited file to an overall dataset\n\nexport the overall dataset",
+    "text": "2.1 Read multiple files\nYou have a folder containing multiple results files, one for each participant, and you want a single results file, with every participant in it, one under the other.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
     ]
@@ -47,6 +47,56 @@
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "markdown.html",
+    "href": "markdown.html",
+    "title": "3  Making reports",
+    "section": "",
+    "text": "markdown allows you to make a document detailing your code and its outputs (datasets, plots, etc)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Making reports</span>"
+    ]
+  },
+  {
+    "objectID": "files.html#read-multiple-files",
+    "href": "files.html#read-multiple-files",
+    "title": "2  File Handling",
+    "section": "",
+    "text": "loop over a directory’s files\n\nread each file\n\nread_csv(); read_excel()\n\nedit each file\n\nmutate()\nrename()\nrelocate()\nrelocate() with internal rename()\nselect()\n\nadd each edited file to an overall dataset\n\nbind_rows()\n\n\nexport the overall dataset\n\nwrite_csv(); write_excel_csv()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
+    ]
+  },
+  {
+    "objectID": "files.html#deal-with-column-order",
+    "href": "files.html#deal-with-column-order",
+    "title": "2  File Handling",
+    "section": "2.2 Deal with column order",
+    "text": "2.2 Deal with column order\n\nrename()\nrelocate()\nrelocate() with internal rename()\nselect()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
+    ]
+  },
+  {
+    "objectID": "files.html#add-columns",
+    "href": "files.html#add-columns",
+    "title": "2  File Handling",
+    "section": "2.2 Add columns",
+    "text": "2.2 Add columns\n\nmutate()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
+    ]
+  },
+  {
+    "objectID": "files.html#create-means",
+    "href": "files.html#create-means",
+    "title": "2  File Handling",
+    "section": "2.2 Create means",
+    "text": "2.2 Create means\nOnce you have a dataset containing results from all participants:\n\ngroup_by()\nsummarise()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
     ]
   }
 ]
