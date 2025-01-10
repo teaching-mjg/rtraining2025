@@ -1,7 +1,3 @@
 # Summary
 
-In summary, this book has no content whatsoever.
-
-```{r}
-1 + 1
-```
+At the moment there is no summary, we might remove this chapter.

@@ -8,8 +8,10 @@ book:
   date: "07/01/2025"
   chapters:
     - index.qmd
-    - intro.qmd
+    #- intro.qmd
     - files.qmd
+    - analysis.qmd
+    - plots.qmd
     - markdown.qmd
     - summary.qmd
     - references.qmd

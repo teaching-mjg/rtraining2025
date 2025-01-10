@@ -18,9 +18,3 @@ You have a folder containing multiple results files, one for each participant, a
 * export the overall dataset
   * `write_csv()`; `write_excel_csv()`
 
-## Create means
-
-Once you have a dataset containing results from all participants:
-
-* `group_by()`
-* `summarise()`

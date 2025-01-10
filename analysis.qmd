@@ -1,0 +1,89 @@
+# Analysis
+
+## Descriptive statistics
+
+Simple summary statistics can sometimes be obtained with `summary()` -- this will give you min, max, and mean for your dependent variables, which might be enough for your purposes.
+
+* `summary()`
+
+## Aggregation
+
+Once you have a dataset containing results from all participants, you might want to aggregate over trials, participants and conditions before you proceed to analysis.
+
+Aggregation could be a step that you perform in its own right, to obtain descriptive statistics at the condition level. In this case, `summary()` won't meet your needs because you need to aggregate over trials in each condition, per participant, to obtain "participant means", and then go on to aggregate over participant means to the condition level to get "condition means".
+
+Aggregation could be a step that you need to perform before doing inferential statistics. In this case it's likely that you want to aggregate over trials in each condition, per participant, to obtain "participant means", and submit the participant means to analysis.
+
+
+In either case, aggregation is done by:
+
+* `group_by()`
+* `summarise()`
+
+## Example with Code
+
+* **raw data**
+
+```{r, echo=F, message=F}
+set.seed(123)
+suppressPackageStartupMessages(library(tidyverse))
+dat=tibble(participant = rep(c(1,2,3), each=4), 
+           condition=rep(c("AAA", "B"), each=2, times=3),
+           trial = rep(c(1,2), times=6),
+           
+           score=rep(runif(n=12, min=1, max=20)))
+```
+
+```{r, echo=F}
+knitr::kable(dat)
+```
+
+* **participant means**: a single value per-condition for each participant, collapsing over trials
+
+```{r, message=F}
+dat = dat %>% 
+  group_by(participant, condition) %>% 
+  summarise(mean_score=mean(score))
+```
+
+```{r, echo=F}
+knitr::kable(dat)
+```
+
+* **condition means**: a single value for each condition, collapsing over participants
+
+```{r, message=F}
+dat = dat %>% 
+  group_by(condition) %>% 
+  summarise(grand_mean_score=mean(mean_score))
+```
+
+```{r, echo=F}
+knitr::kable(dat)
+```
+
+
+
+
+### Participant means
+
+Even if you only want "condition means", for descriptive purposes, you will need to aggregate over trials and conditions separately for each participant first, to get "participant menas".
+
+
+
+You will also need "participant means" if you want to proceed to inferential analysis^[unless you are going to use mixed effects models in which case you would typically submit the raw data to analysis].
+
+For example, if the inferential test is within-subjects ANOVA, you will want to calculate a mean for each condition for each participant, and submit the aggregated data (instead of the raw data) to ANOVA.
+
+
+### Condition means
+
+Maybe now that you have per-participant means for each condition you want to report condition means as a way of describing the pattern in the data separately from submitting the data to inferential statistics.
+
+* You probably need further iterations of `group_by()` `%>%` `summarise()`
+
+## Inferential
+
+After performing any
+
+Here we will use simple regression -- `lm()` -- as the example analysis.

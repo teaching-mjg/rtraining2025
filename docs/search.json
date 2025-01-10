@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R Training 2025",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\n\nThis book constitutes the materials for a 2025 training session.",
     "crumbs": [
       "Preface"
     ]
@@ -14,7 +14,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "This book constitutes the materials for a 2025 training session.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -22,21 +22,21 @@
   {
     "objectID": "files.html",
     "href": "files.html",
-    "title": "2  File Handling",
+    "title": "1  File Handling",
     "section": "",
-    "text": "2.1 Read multiple files\nYou have a folder containing multiple results files, one for each participant, and you want a single results file, with every participant in it, one under the other.",
+    "text": "1.1 Read multiple files\nYou have a folder containing multiple results files, one for each participant, and you want a single results file, with every participant in it, one under the other.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>File Handling</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  Summary",
+    "title": "6  Summary",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "At the moment there is no summary, we might remove this chapter.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {
@@ -62,11 +62,11 @@
   {
     "objectID": "files.html#read-multiple-files",
     "href": "files.html#read-multiple-files",
-    "title": "2  File Handling",
+    "title": "1  File Handling",
     "section": "",
     "text": "loop over a directory’s files\n\nread each file\n\nread_csv(); read_excel()\n\nedit each file\n\nmutate()\nrename()\nrelocate()\nrelocate() with internal rename()\nselect()\n\nadd each edited file to an overall dataset\n\nbind_rows()\n\n\nexport the overall dataset\n\nwrite_csv(); write_excel_csv()",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>File Handling</span>"
     ]
   },
   {
@@ -97,6 +97,106 @@
     "text": "2.2 Create means\nOnce you have a dataset containing results from all participants:\n\ngroup_by()\nsummarise()",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>File Handling</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "2  Analysis",
+    "section": "",
+    "text": "2.1 Descriptive statistics\nSimple summary statistics can sometimes be obtained with summary() – this will give you min, max, and mean for your dependent variables, which might be enough for your purposes.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#create-means",
+    "href": "analysis.html#create-means",
+    "title": "2  Analysis",
+    "section": "",
+    "text": "group_by()\nsummarise()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#footnotes",
+    "href": "analysis.html#footnotes",
+    "title": "2  Analysis",
+    "section": "",
+    "text": "unless you are going to use mixed effects models in which case you would typically submit the raw data to analysis↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#perform-analysis-using-anova-as-the-example",
+    "href": "analysis.html#perform-analysis-using-anova-as-the-example",
+    "title": "3  Analysis",
+    "section": "3.2 Perform analysis (using ANOVA as the example)",
+    "text": "3.2 Perform analysis (using ANOVA as the example)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#perform-analysis",
+    "href": "analysis.html#perform-analysis",
+    "title": "2  Analysis",
+    "section": "2.2 Perform analysis",
+    "text": "2.2 Perform analysis\nHere we will use simple regression – lm() – as the example analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#descriptive",
+    "href": "analysis.html#descriptive",
+    "title": "2  Analysis",
+    "section": "2.2 Descriptive",
+    "text": "2.2 Descriptive\n\n2.2.1 Condition means\nMaybe now that you have per-participant means for each condition you want to report condition means as a way of describing the pattern in the data separately from submitting the data to inferential statistics.\n\nYou probably need further iterations of group_by() %&gt;% summarise()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#inferential",
+    "href": "analysis.html#inferential",
+    "title": "2  Analysis",
+    "section": "2.4 Inferential",
+    "text": "2.4 Inferential\nAfter performing any\nHere we will use simple regression – lm() – as the example analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#aggregation",
+    "href": "analysis.html#aggregation",
+    "title": "2  Analysis",
+    "section": "2.2 Aggregation",
+    "text": "2.2 Aggregation\nOnce you have a dataset containing results from all participants, you might want to aggregate over trials, participants and conditions before you proceed to analysis.\nAggregation could be a step that you perform in its own right, to obtain descriptive statistics at the condition level. In this case, summary() won’t meet your needs because you need to aggregate over trials in each condition, per participant, to obtain “participant means”, and then go on to aggregate over participant means to the condition level to get “condition means”.\nAggregation could be a step that you need to perform before doing inferential statistics. In this case it’s likely that you want to aggregate over trials in each condition, per participant, to obtain “participant means”, and submit the participant means to analysis.\nIn either case, aggregation is done by:\n\ngroup_by()\nsummarise()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#descriptive-statistics",
+    "href": "analysis.html#descriptive-statistics",
+    "title": "2  Analysis",
+    "section": "",
+    "text": "summary()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "analysis.html#example-with-code",
+    "href": "analysis.html#example-with-code",
+    "title": "2  Analysis",
+    "section": "2.3 Example with Code",
+    "text": "2.3 Example with Code\n\nraw data\n\n\n\n\n\n\nparticipant\ncondition\ntrial\nscore\n\n\n\n\n1\nAAA\n1\n6.463973\n\n\n1\nAAA\n2\n15.977798\n\n\n1\nB\n1\n8.770561\n\n\n1\nB\n2\n17.777331\n\n\n2\nAAA\n1\n18.868878\n\n\n2\nAAA\n2\n1.865573\n\n\n2\nB\n1\n11.034004\n\n\n2\nB\n2\n17.955962\n\n\n3\nAAA\n1\n11.477265\n\n\n3\nAAA\n2\n9.675680\n\n\n3\nB\n1\n19.179834\n\n\n3\nB\n2\n9.613349\n\n\n\n\n\n\nparticipant means: a single value per-condition for each participant, collapsing over trials\n\n\ndat = dat %&gt;% \n  group_by(participant, condition) %&gt;% \n  summarise(mean_score=mean(score))\n\n\n\n\n\n\nparticipant\ncondition\nmean_score\n\n\n\n\n1\nAAA\n11.22089\n\n\n1\nB\n13.27395\n\n\n2\nAAA\n10.36723\n\n\n2\nB\n14.49498\n\n\n3\nAAA\n10.57647\n\n\n3\nB\n14.39659\n\n\n\n\n\n\ncondition means: a single value for each condition, collapsing over participants\n\n\ndat = dat %&gt;% \n  group_by(condition) %&gt;% \n  summarise(grand_mean_score=mean(mean_score))\n\n\n\n\n\n\ncondition\ngrand_mean_score\n\n\n\n\nAAA\n10.72153\n\n\nB\n14.05517\n\n\n\n\n\n\n2.3.1 Participant means\nEven if you only want “condition means”, for descriptive purposes, you will need to aggregate over trials and conditions separately for each participant first, to get “participant menas”.\nYou will also need “participant means” if you want to proceed to inferential analysis1.\nFor example, if the inferential test is within-subjects ANOVA, you will want to calculate a mean for each condition for each participant, and submit the aggregated data (instead of the raw data) to ANOVA.\n\n\n2.3.2 Condition means\nMaybe now that you have per-participant means for each condition you want to report condition means as a way of describing the pattern in the data separately from submitting the data to inferential statistics.\n\nYou probably need further iterations of group_by() %&gt;% summarise()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Analysis</span>"
     ]
   }
 ]

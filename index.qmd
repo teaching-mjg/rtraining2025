@@ -1,9 +1,10 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+<!-- This preface has no content -->
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This book constitutes the materials for a 2025 training session.
 
 ```{r}
-1 + 1
+library(tidyverse)
 ```
+
