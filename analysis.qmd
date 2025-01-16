@@ -14,7 +14,6 @@ Aggregation could be a step that you perform in its own right, to obtain descrip
 
 Aggregation could be a step that you need to perform before doing inferential statistics. In this case it's likely that you want to aggregate over trials in each condition, per participant, to obtain "participant means", and submit the participant means to analysis.
 
-
 In either case, aggregation is done by:
 
 * `group_by()`

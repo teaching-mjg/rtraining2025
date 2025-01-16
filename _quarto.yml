@@ -13,7 +13,8 @@ book:
     - analysis.qmd
     - plots.qmd
     - markdown.qmd
-    - summary.qmd
+    - other.qmd
+    #- summary.qmd
     - references.qmd
     
 
