@@ -1,0 +1,5 @@
+# TODO
+
+* Natalie's 4 files come from the same participant. We wand a single file representing that participant's performance for task 1, task 2, task 3, and task 4.
+
+* We want an example of a single task with multiple participants where we loop through and append each participant into a file with all participants. Then, because this results in a data set with multiple participants, it is suitable for demonstrating `ezANOVA()` and `report()`

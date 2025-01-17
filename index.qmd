@@ -4,7 +4,7 @@
 
 This book constitutes the materials for a 2025 training session.
 
-```{r}
+```{r, echo=F, message=F}
 suppressPackageStartupMessages(library(tidyverse))
 ```
 

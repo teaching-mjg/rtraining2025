@@ -1,0 +1,5 @@
+﻿key_resp_2.keys,key_resp_2.rt,key_resp_3.keys,key_resp_3.rt,key_resp.keys,key_resp.rt,key_resp_4.keys,trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,trials.ran,stimulus,distractor1,distractor2,distractor3,distractor4,CorrAns,isi_duration,isi_dur_in_seconds,participant,session,date,expName,psychopyVersion,OS,frameRate,PROLIFIC_PID,SESSION_ID,STUDY_ID,preview
+return,4.5085,space,1.8513,space,0.3288,,0,0,0,272,1,D, , , , ,space,2000,2,TASHA2,001,2021-08-17_16h45.36.852,natb3,2021.2.3,Win32,60.16847172,60f71c21c01393248bc25db1,0om5xbcm0tq,6107d0959f7c4c3641818b95,1
+,,,,space,0.4768,,0,1,1,222,1,O, , , , ,space,2000,2,TASHA2,001,2021-08-17_16h45.36.852,natb3,2021.2.3,Win32,60.16847172,60f71c21c01393248bc25db1,0om5xbcm0tq,6107d0959f7c4c3641818b95,1
+,,,,space,0.4271,,0,2,2,308,1,G, , , , ,space,1500,1.5,TASHA2,001,2021-08-17_16h45.36.852,natb3,2021.2.3,Win32,60.16847172,60f71c21c01393248bc25db1,0om5xbcm0tq,6107d0959f7c4c3641818b95,1
+,,,,,,,0,3,3,87,1,H, , , , ,space,1500,1.5,TASHA2,001,2021-08-17_16h45.36.852,natb3,2021.2.3,Win32,60.16847172,60f71c21c01393248bc25db1,0om5xbcm0tq,6107d0959f7c4c3641818b95,1

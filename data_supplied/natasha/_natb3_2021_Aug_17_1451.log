@@ -1,0 +1,87 @@
+1.7660 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+5.9688 	WARNING 	User requested fullscreen with size [1024  768], but screen is actually [1920, 1080]. Using actual size
+7.6363 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000020D0968F438>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000020D09655A58>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+7.6369 	EXP 	window1: mouseVisible = True
+7.6370 	EXP 	window1: recordFrameIntervals = False
+7.8020 	EXP 	window1: recordFrameIntervals = True
+7.9856 	EXP 	window1: recordFrameIntervals = False
+8.2578 	EXP 	Imported demographics2.csv as conditions, 4 conditions, 9 params
+8.2579 	WARNING 	Form form included field no longer used questionText. Replacing with new name 'itemText'
+8.2579 	WARNING 	questionColor is a deprecated heading for Forms. Use itemColor instead
+8.2579 	WARNING 	questionWidth is a deprecated heading for Forms. Use itemWidth instead
+8.2580 	WARNING 	questionColor is a deprecated heading for Forms. Use itemColor instead
+8.2580 	WARNING 	questionWidth is a deprecated heading for Forms. Use itemWidth instead
+8.2580 	WARNING 	questionColor is a deprecated heading for Forms. Use itemColor instead
+8.2580 	WARNING 	questionWidth is a deprecated heading for Forms. Use itemWidth instead
+8.2580 	WARNING 	questionColor is a deprecated heading for Forms. Use itemColor instead
+8.2581 	WARNING 	questionWidth is a deprecated heading for Forms. Use itemWidth instead
+8.2592 	EXP 	Question text: Please select your gender
+8.3269 	EXP 	window1: mouseVisible = True
+8.4257 	EXP 	Question text: Please select your age
+8.4375 	EXP 	window1: mouseVisible = True
+8.4525 	EXP 	Question text: Please select your highest qualification
+8.4861 	EXP 	window1: mouseVisible = True
+8.4942 	EXP 	Question text: Please select your mood
+8.5216 	EXP 	window1: mouseVisible = True
+8.5302 	EXP 	window1: mouseVisible = True
+8.5398 	EXP 	Created unnamed Rect = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, fillColor=array([0, 0, 0]), fillColorSpace='rgb', fillRGB=array([0, 0, 0]), interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineRGB=array([0, 0, 0]), lineWidth=1.5, name='unnamed Rect', opacity=0, ori=0.0, pos=array([0., 0.]), size=array([0., 0.]), units='height', vertices=ndarray(...), win=Window(...))
+8.5533 	EXP 	Created form = <psychopy.visual.form.Form object at 0x0000020D160B89B0>
+8.5599 	EXP 	Created polygon = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0.0, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.0, name='polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.0125, 0.0125]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+8.5623 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_2', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+8.5638 	EXP 	Created d1 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='d1', opacity=1, ori=0.0, pos=array([-0.3,  0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+8.5651 	EXP 	Created d2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='d2', opacity=1, ori=0.0, pos=array([0.3, 0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+8.5665 	EXP 	Created d3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='d3', opacity=1, ori=0.0, pos=array([-0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+8.5678 	EXP 	Created d4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='d4', opacity=1, ori=0.0, pos=array([ 0.3, -0.3]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+8.6585 	EXP 	unnamed Form: autoLog = True
+8.6585 	EXP 	form: name = 'form'
+8.6585 	EXP 	form: size = (1, 0.7)
+8.6585 	EXP 	form: size = array([1. , 0.7])
+8.6585 	EXP 	form: units = 'height'
+8.6585 	EXP 	form: depth = 0
+8.6585 	EXP 	form: autoDraw = True
+12.7873 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.7993 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.8046 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.8088 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.8190 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.8245 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.8673 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.8837 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.8954 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+12.9119 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.3481 	DATA 	Mouse: wheel shift=(0,-1), pos=(823,663)
+13.3527 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.3652 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.3712 	DATA 	Mouse: wheel shift=(0,-1), pos=(823,663)
+13.3755 	DATA 	Mouse: wheel shift=(0,-1), pos=(823,663)
+13.3798 	DATA 	Mouse: wheel shift=(0,-1), pos=(823,663)
+13.3898 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.3951 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.4036 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.4064 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.4469 	DATA 	Mouse: wheel shift=(0,-1), pos=(823,663)
+13.4700 	DATA 	Mouse: wheel shift=(0,-2), pos=(823,663)
+13.4976 	DATA 	Mouse: wheel shift=(0,-2), pos=(823,663)
+13.5030 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.5220 	DATA 	Mouse: wheel shift=(0,-1), pos=(823,663)
+13.5328 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.5537 	DATA 	Mouse: wheel shift=(0,-1), pos=(823,663)
+13.5724 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.5820 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.6010 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.6200 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.6307 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.6524 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.6668 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.6802 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.6957 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.7157 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.7282 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.7469 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.7576 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.7740 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.7976 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.8071 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+13.8262 	DATA 	Mouse: wheel shift=(0,0), pos=(823,663)
+15.1883 	DATA 	Keypress: escape
+15.4459 	EXP 	window1: mouseVisible = True

@@ -1,0 +1,40 @@
+## Inferential statistics
+
+```{r}
+library(ez)
+library(report)
+```
+
+```{r}
+ANOVA_OUTPUT = 
+  ezANOVA(
+    data = participant_means,
+    dv = mean_score,
+    wid = participant,
+    within = condition,
+    return_aov = TRUE
+  )
+```
+
+```{r}
+ANOVA_OUTPUT$ANOVA %>% select(-ges) %>% kable(row.names = F, digits=4)
+```
+
+### Automated summary using `report()`
+
+```{r}
+r = report(ANOVA_OUTPUT$aov)
+```
+
+```{r}
+r
+```
+
+```{r}
+summary(r)
+```
+
+```{r}
+as.data.frame(r)
+summary(as.data.frame(r))
+```

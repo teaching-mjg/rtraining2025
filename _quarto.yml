@@ -5,25 +5,18 @@ project:
 book:
   title: "R Training 2025"
   author: "Matt Green"
-  date: "07/01/2025"
+  date: now
+  date-format: "dddd D MMM YYYY [at] HH[:]mm[:]ss"
   chapters:
+    - todo.qmd
     - index.qmd
-    #- intro.qmd
     - files.qmd
     - analysis.qmd
     - plots.qmd
     - markdown.qmd
-    - other.qmd
-    #- summary.qmd
-    - references.qmd
-    
-
-bibliography: references.bib
+    - natalie.qmd
+    - natasha.qmd
 
 format:
   html:
     theme: cosmo
-  # pdf:
-  #   documentclass: scrreprt
-
-

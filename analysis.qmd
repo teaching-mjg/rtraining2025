@@ -83,10 +83,10 @@ ANOVA_OUTPUT =
     data = participant_means,
     dv = mean_score,
     wid = participant,
-    within = condition
+    within = condition,
+    return_aov = TRUE
   )
 ```
-
 ```{r}
 ANOVA_OUTPUT$ANOVA %>% select(-ges) %>% kable(row.names = F, digits=4)
 ```
