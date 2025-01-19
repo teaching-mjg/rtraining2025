@@ -1,3 +1,9 @@
+::: {.callout-note}
+note
+:::
+
+
+
 ## Inferential statistics
 
 ```{r}
@@ -20,21 +26,3 @@ ANOVA_OUTPUT =
 ANOVA_OUTPUT$ANOVA %>% select(-ges) %>% kable(row.names = F, digits=4)
 ```
 
-### Automated summary using `report()`
-
-```{r}
-r = report(ANOVA_OUTPUT$aov)
-```
-
-```{r}
-r
-```
-
-```{r}
-summary(r)
-```
-
-```{r}
-as.data.frame(r)
-summary(as.data.frame(r))
-```

@@ -10,7 +10,7 @@ book:
   chapters:
     - todo.qmd
     - index.qmd
-    - files.qmd
+    - file_handling.qmd
     - analysis.qmd
     - plots.qmd
     - markdown.qmd

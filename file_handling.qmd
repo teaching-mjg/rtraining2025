@@ -1,0 +1,295 @@
+# File Handling
+
+You have a folder containing multiple results files, one for each participant, and you want a single results file, with every participant in it, one under the other.
+
+* loop over a directory's files
+  * read each file
+    * `read_csv()`; `read_excel()`
+  * edit each file
+    * `mutate()`
+    * `rename()`
+    * `relocate()`
+    * `relocate()` with internal `rename()`
+    * `select()`
+  * add each edited file to an overall dataset
+    * `bind_rows()`
+* export the overall dataset
+  * `write_csv()`; `write_excel_csv()`
+
+## Simple Looping
+
+We have 160 subjects responding to a Lexical Decision Task
+
+```{r, libs, echo=F, message=F}
+library(tidyverse)
+library(knitr)
+```
+
+```{r, getfile, cache=TRUE}
+data_dir <-
+  file.path("data_supplied/lexical_decision_task")
+
+data_files = list.files(
+  data_dir, full.names = TRUE, 
+  pattern = "*.csv"
+)
+
+all_subjects = tibble()
+
+for (f in data_files){
+  subject_in = read_csv(f, show_col_types=FALSE)
+  all_subjects <- all_subjects %>% bind_rows(subject_in)
+}
+```
+
+There are `{r} length(data_files)` files. Each file has `{r} length(names(all_subjects))` columns, and `{r} nrow(subject_in)` rows.
+
+Let's export that as an excel file so that we can work on it outside of R. Maybe you want to use JASP from this point on for example. R has done the heavy lifting of combining 160 individual spreadsheets into one, which JASP isn't equipped to do, so you have already derived some benefit from this small amount of R.
+
+```{r}
+write_excel_csv(
+  all_subjects, 
+  file="data_derived/lexical_decision_task_all_subjects.xls"
+  )
+```
+
+## Data wrangling
+
+In all likelihood, most of these columns are redundant. The number of rows is likely to be close to the number of trials.
+
+Set up a reference to `all_subjects` using `a` for convenience.
+
+```{r}
+all_subjects -> a
+```
+
+
+Let's ask for a list of the column names so that we can pick out the ones we know we care about; and so we can examine the ones we aren't sure about.
+
+Here are the ones we know we care about:
+
+1. **subject_nr** is unique identifier for subject assigned by the experiment
+1. **Log_BG** (is bigram frequency)
+1. **Log_Freq_HAL** (is single word frequency from a corpus called HAL)
+1. **Ortho_N** (orthographic frequency neighbourhood, a measure of how many similarly-spelt words there are for some word)
+1. **Stimulus** (the actual word, like "limb")
+1. **Type** (word or non-word)
+<!-- 1. **correct_response** (what they should have pressed) -->
+<!-- 1. **response** (what they actually pressed) -->
+1. **correct** (codes 0 or 1 for accuracy on this trial)
+1. **response_time** (RT, but in seconds)
+
+See that this is a tiny fraction of all the columns that the experiment records. This dataset comes from PsychoPy which deliberately always records lots of redundant information, but most computer-based experiment platforms also generate columns that you would want to remove before analysis.
+
+```{r}
+names(all_subjects)
+```
+
+
+
+And here is the head of the data
+
+```{r}
+head(all_subjects) %>% kable()
+```
+
+
+You can pull out only these columns (the method is given below using `select()`), but I recommend that first you re-order the columns so that these come first -- that way you can easily move another column if you realise you also care about that.
+
+```{r}
+all_subjects <-
+  all_subjects %>% 
+    relocate(
+      subject_nr, 
+      Stimulus, 
+      Type, 
+      #correct_response, 
+      #response, 
+      correct, 
+      response_time,
+      Log_BG, 
+      Log_Freq_HAL,
+      Ortho_N
+    )
+```
+
+Now when we ask for the head of the data the columns we care about come first.
+
+```{r}
+head(all_subjects) %>% kable()
+```
+
+The columns names are a bit messy. Let's clean them up. We issue the same command as before but we supply the new names too.
+
+```{r}
+all_subs <-
+  all_subjects %>% 
+    relocate(
+      subject    = subject_nr, 
+      word       = Stimulus, 
+      wordiness  = Type, 
+      bigram     = Log_BG, 
+      unigram    = Log_Freq_HAL,
+      neighbours = Ortho_N,
+      ACC        = correct, 
+      RT         = response_time
+    )
+```
+
+Now when we ask for the head of the data the columns we care about are nicely named.
+
+```{r}
+head(all_subs) %>% kable()
+```
+
+However the unwanted coluns are still there, so we remove them with `select()`. We know that there are 8 columns we care about, and we know that they are the first 8, so we can use numbering instead of naming them.
+
+```{r}
+all_subs = all_subs %>% 
+  select(1:8)
+
+head(all_subs) %>% kable()
+```
+
+## Descriptive Tables
+
+Naive summary before coercion
+
+```{r}
+summary(all_subs)
+```
+
+Coercion using `mutate()`
+
+```{r}
+all_subs = all_subs %>% 
+  mutate(
+    subject = as_factor(subject),
+    word = as_factor(word), 
+    wordiness = as_factor(wordiness),
+    neighbours = as_factor(neighbours),
+    ACC = as.logical(ACC)
+  )
+```
+
+```{r}
+summary(all_subs)
+```
+
+## Descriptive Plots
+
+
+```{r, message=F}
+collapsed_over_words = all_subs %>% 
+  filter(
+    ACC==TRUE,
+    neighbours != "1"
+  ) %>% 
+  group_by(word, wordiness) %>% 
+  summarise(
+    acc=mean(ACC),
+    rt =mean(RT),
+    neighbours=unique(neighbours),
+    unigram = mean(unigram),
+    bigram=mean(bigram)
+  ) %>% 
+  ungroup()
+```
+
+We can see that the relationship between (accurate) reaction time and whether the word was a real word or not is fairly consistent over different numbers of neighbours: it takes longer to accurately identify a non-word as a non-word than it does to recognise a word.
+
+```{r, message=F}
+ggplot(data=collapsed_over_words,
+       aes(y=rt, x=wordiness, color=wordiness))+
+  facet_wrap(~neighbours, , labeller = labeller(.rows = label_both))+
+  stat_summary(fun.data=mean_se)+
+  stat_summary(fun=mean, geom='line', aes(group=1), color='grey')+
+  theme(panel.grid=element_blank())
+```
+
+## Inferential Stats
+
+Multiple regression using `lm()`
+
+```{r}
+real_words_collapsed_over_subjects_and_centred <-
+  all_subs %>% 
+    filter(
+      wordiness=="word"
+    ) %>% 
+  group_by(word) %>% 
+  summarise(RT=mean(RT),
+            ACC=mean(ACC),
+            bigram=mean(bigram),
+            unigram=mean(unigram),
+            neighbours=mean(as.numeric(neighbours))) %>% 
+  
+    mutate(
+      neighbours=as.numeric(scale(as.numeric(neighbours))),
+      unigram=as.numeric(scale(as.numeric(unigram))),
+      bigram=as.numeric(scale(as.numeric(bigram)))
+    )
+```
+
+
+```{r}
+model1rt <-
+  lm(data = real_words_collapsed_over_subjects_and_centred,
+     formula = RT ~ ACC + neighbours + unigram + bigram)
+```
+
+```{r, message=F}
+library(easystats)
+```
+
+```{r}
+report1rt = report(model1rt)
+```
+
+```{r, results='asis'}
+report1rt
+```
+
+## Plot some effects
+
+More accurate responses tend to be faster (sig)
+
+```{r, message=F}
+ggplot(data=real_words_collapsed_over_subjects_and_centred,
+       aes(y=RT, x=ACC))+
+  stat_smooth(method='loess', color='blue', fill='blue')+
+  geom_smooth(method='lm', color='red', fill='red')+
+  theme_bw()+theme(panel.grid=element_blank())
+```
+
+
+It takes longer to response to words with more neighbours (non-sig)  
+
+```{r, message=F}
+ggplot(data=real_words_collapsed_over_subjects_and_centred,
+       aes(y=RT, x=neighbours))+
+  stat_smooth(method='loess', color='blue', fill='blue')+
+  geom_smooth(method='lm', color='red', fill='red')+
+  theme_bw()+theme(panel.grid=element_blank())
+```
+
+Higher unigram frequency leads to faster responses (sig)
+
+```{r, message=F}
+ggplot(data=real_words_collapsed_over_subjects_and_centred,
+       aes(y=RT, x=unigram))+
+  stat_smooth(method='loess', color='blue', fill='blue')+
+  geom_smooth(method='lm', color='red', fill='red')+
+  theme_bw()+theme(panel.grid=element_blank())
+```
+
+Higher bigram frequency leads to faster responses (non-sig)
+
+```{r, message=F}
+ggplot(data=real_words_collapsed_over_subjects_and_centred,
+       aes(y=RT, x=bigram))+
+  stat_smooth(method='loess', color='blue', fill='blue')+
+  geom_smooth(method='lm', color='red', fill='red')+
+  theme_bw()+theme(panel.grid=element_blank())
+```
+

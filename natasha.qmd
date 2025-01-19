@@ -1,6 +1,6 @@
 # Natasha
 
-```{r, message=F}
+```{r, libs, message=F}
 library("knitr")
 library("kableExtra")
 library("ez")
@@ -14,7 +14,7 @@ library("gt")
 
 Read in the raw data files. Put out a tibble saying how many rows each raw data file has.
 
-```{r}
+```{r, dataloop, cache=TRUE}
 path_to_data = "data_supplied/natasha"
 canonical_file = "5872a0d958ca4c00018ce4fe_natb3_2021-08-19_15h27.24.182.csv"
 canonical_file_path = file.path(path_to_data, canonical_file)
@@ -52,7 +52,7 @@ file_level_info$participant <- file_level_info$participant
 
 Make a data frame (goodfiles) that contains all the participant data files that were complete (had 336 rows).
 
-```{r}
+```{r, goodfiles, cache=TRUE}
 goodfiles=tibble()
 pid = 0
 for (i in seq_along(all_results_files)) {
@@ -79,7 +79,7 @@ goodfiles$pid = as_factor(goodfiles$pid)
 
 Change names of variables from raw data files, making `goodfilesclean`
 
-```{r}
+```{r, makegoodfilesclean, cache=TRUE}
 goodfilesclean <- goodfiles %>% 
   rename(trial=trials.thisN, response_given=key_resp.keys, response_expected=CorrAns, rt=key_resp.rt) %>% 
   mutate(participant=as_factor(participant)) %>% 
@@ -94,7 +94,7 @@ goodfilesclean <- goodfiles %>%
 
 Figure out how many distractors were on the screen in this trial, in `goodfilesclean`
 
-```{r, slow-row-processing}
+```{r, slow-row-processing, cache=TRUE, dependson="makegoodfilesclean"}
 goodfilesclean$n_distractors <- as.numeric(NA)
 for (i in 1:nrow(goodfilesclean)) {
   n=0
