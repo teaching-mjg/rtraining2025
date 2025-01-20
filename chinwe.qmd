@@ -1,0 +1,12 @@
+# Chinwe
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+data_dir = "~/gits/spatial_navigation_task/"
+data_files = list.files(data_dir, full.names = TRUE)
+```
+
