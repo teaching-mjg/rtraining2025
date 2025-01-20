@@ -8,7 +8,6 @@ book:
   date: now
   date-format: "dddd D MMM YYYY [at] HH[:]mm[:]ss"
   chapters:
-    - todo.qmd
     - index.qmd
     - file_handling.qmd
     - analysis.qmd

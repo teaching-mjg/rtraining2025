@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; File Handling – R Training 2025</title>
+<title>1&nbsp; File Handling – R Training 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./file_handling.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">File Handling</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./file_handling.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">File Handling</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,12 +142,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./todo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">TODO</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
@@ -155,37 +149,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./file_handling.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">File Handling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">File Handling</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Plots</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making reports</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Markdown for reports</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./natalie.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Natalie</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Natalie</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./natasha.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Natasha</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Natasha</span></span></a>
   </div>
 </li>
     </ul>
@@ -198,12 +192,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#simple-looping" id="toc-simple-looping" class="nav-link active" data-scroll-target="#simple-looping"><span class="header-section-number">2.1</span> Simple Looping</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling"><span class="header-section-number">2.2</span> Data wrangling</a></li>
-  <li><a href="#descriptive-tables" id="toc-descriptive-tables" class="nav-link" data-scroll-target="#descriptive-tables"><span class="header-section-number">2.3</span> Descriptive Tables</a></li>
-  <li><a href="#descriptive-plots" id="toc-descriptive-plots" class="nav-link" data-scroll-target="#descriptive-plots"><span class="header-section-number">2.4</span> Descriptive Plots</a></li>
-  <li><a href="#inferential-stats" id="toc-inferential-stats" class="nav-link" data-scroll-target="#inferential-stats"><span class="header-section-number">2.5</span> Inferential Stats</a></li>
-  <li><a href="#plot-some-effects" id="toc-plot-some-effects" class="nav-link" data-scroll-target="#plot-some-effects"><span class="header-section-number">2.6</span> Plot some effects</a></li>
+  <li><a href="#simple-looping" id="toc-simple-looping" class="nav-link active" data-scroll-target="#simple-looping"><span class="header-section-number">1.1</span> Simple Looping</a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling"><span class="header-section-number">1.2</span> Data wrangling</a></li>
+  <li><a href="#descriptive-tables" id="toc-descriptive-tables" class="nav-link" data-scroll-target="#descriptive-tables"><span class="header-section-number">1.3</span> Descriptive Tables</a></li>
+  <li><a href="#descriptive-plots" id="toc-descriptive-plots" class="nav-link" data-scroll-target="#descriptive-plots"><span class="header-section-number">1.4</span> Descriptive Plots</a></li>
+  <li><a href="#inferential-stats" id="toc-inferential-stats" class="nav-link" data-scroll-target="#inferential-stats"><span class="header-section-number">1.5</span> Inferential Stats</a></li>
+  <li><a href="#plot-some-effects" id="toc-plot-some-effects" class="nav-link" data-scroll-target="#plot-some-effects"><span class="header-section-number">1.6</span> Plot some effects</a></li>
   </ul>
 </nav>
     </div>
@@ -212,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">File Handling</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">File Handling</span></h1>
 </div>
 
 
@@ -255,8 +249,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>write_csv()</code>; <code>write_excel_csv()</code></li>
 </ul></li>
 </ul>
-<section id="simple-looping" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="simple-looping"><span class="header-section-number">2.1</span> Simple Looping</h2>
+<section id="simple-looping" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="simple-looping"><span class="header-section-number">1.1</span> Simple Looping</h2>
 <p>We have 160 subjects responding to a Lexical Decision Task</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span></span>
@@ -283,8 +277,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data-wrangling" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">2.2</span> Data wrangling</h2>
+<section id="data-wrangling" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">1.2</span> Data wrangling</h2>
 <p>In all likelihood, most of these columns are redundant. The number of rows is likely to be close to the number of trials.</p>
 <p>Set up a reference to <code>all_subjects</code> using <code>a</code> for convenience.</p>
 <div class="cell">
@@ -3352,8 +3346,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="descriptive-tables" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="descriptive-tables"><span class="header-section-number">2.3</span> Descriptive Tables</h2>
+<section id="descriptive-tables" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="descriptive-tables"><span class="header-section-number">1.3</span> Descriptive Tables</h2>
 <p>Naive summary before coercion</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(all_subs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3407,8 +3401,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="descriptive-plots" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="descriptive-plots"><span class="header-section-number">2.4</span> Descriptive Plots</h2>
+<section id="descriptive-plots" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="descriptive-plots"><span class="header-section-number">1.4</span> Descriptive Plots</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>collapsed_over_words <span class="ot">=</span> all_subs <span class="sc">%&gt;%</span> </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
@@ -3442,8 +3436,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="inferential-stats" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="inferential-stats"><span class="header-section-number">2.5</span> Inferential Stats</h2>
+<section id="inferential-stats" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="inferential-stats"><span class="header-section-number">1.5</span> Inferential Stats</h2>
 <p>Multiple regression using <code>lm()</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>real_words_collapsed_over_subjects_and_centred <span class="ot">&lt;-</span></span>
@@ -3485,8 +3479,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Standardized parameters were obtained by fitting the model on a standardized version of the dataset. 95% Confidence Intervals (CIs) and p-values were computed using a Wald t-distribution approximation.</p>
 </section>
-<section id="plot-some-effects" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="plot-some-effects"><span class="header-section-number">2.6</span> Plot some effects</h2>
+<section id="plot-some-effects" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="plot-some-effects"><span class="header-section-number">1.6</span> Plot some effects</h2>
 <p>More accurate responses tend to be faster (sig)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>real_words_collapsed_over_subjects_and_centred,</span>
@@ -3980,7 +3974,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./analysis.html" class="pagination-link" aria-label="Analysis">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
