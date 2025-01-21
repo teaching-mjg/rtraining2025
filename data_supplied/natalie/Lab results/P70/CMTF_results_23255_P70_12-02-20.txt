@@ -1,0 +1,140 @@
+Cambridge Face Memory Test
+Date:	12-02-20
+Subject:	23255_P70
+This test run was upright (not inverted).
+
+event	picture	RT	response	target	correct
+p1	pract_left.jpg	2652	1	1	1	PRACTICE - NOT COUNTED!!
+p2	pract_right.jpg	2356	2	2	1	PRACTICE - NOT COUNTED!!
+p3	pract_straight.jpg	1545	2	2	1	PRACTICE - NOT COUNTED!!
+b1	B1_Identical_Left.jpg	2839	2	2	1	
+b2	B2_Identical_Frontal.jpg	1654	3	3	1	
+b3	B3_Identical_Right.jpg	2605	3	3	1	
+d1	D1_Identical_Left.jpg	187	1	2	0	
+d2	D2_Identical_Frontal.jpg	1794	2	3	0	
+d3	D3_Identical_Right.jpg	1482	3	3	1	
+j1	J_1_Iden_L.jpg	1685	3	3	1	
+j2	J_2_Iden_Front.jpg	1341	3	3	1	
+j3	J_3_Iden_R.jpg	1607	3	1	0	
+m1	M_1_Iden_L.jpg	2496	2	2	1	
+m2	M_2_Iden_Front.jpg	1888	3	3	1	
+m3	M_3_Iden_R.jpg	1560	1	1	1	
+n1	N_1_Iden_L.jpg	3307	1	3	0	
+n2	N_2_Iden_Front.jpg	1653	1	1	1	
+n3	N_3_Iden_R.jpg	1904	3	3	1	
+z1	Z_1_Iden_L.jpg	1794	1	1	1	
+z2	Z_2_Iden_Front.jpg	2028	3	3	1	
+z3	Z_3_Iden_R.jpg	1607	1	1	1	
+
+-------SECTION END: intro   ----------
+14	out of	18
+77.78%
+
+t1	M_5_Front_Halflit.jpg	6973	1	1	1	
+t2	N_8_13_R_Pro_dark.jpg	1373	3	2	0	
+t3	Z_6_23_Pro_L.jpg	811	1	1	1	
+t4	D5_Halflit_Frontal.jpg	609	3	3	1	
+t5	B7_Bottomlit_Frontal.jpg	359	2	3	0	
+t6	J_6_23_L_Pro.jpg	140	1	2	0	
+t7	D7_Bottomlit_Frontal.jpg	218	3	1	0	
+t8	Z_5_Front_Half.jpg	47	1	3	0	
+t9	M_6_23_L_Pro.jpg	203	3	2	0	
+t10	J_7_Bottom_Lit.jpg	93	1	3	0	
+t11	N_4_23_R_Pro.jpg	78	3	2	0	
+t12	M_8_13_R_Pro_dark.jpg	156	1	3	0	
+t13	J_5_Front_Halflit.jpg	702	3	2	0	
+t14	N_7_Front_Bot.jpg	593	1	1	1	
+t15	Z_4_23_Pro_R.jpg	1092	2	2	1	
+t16	D8_13_Profile_R.jpg	1544	3	2	0	
+t17	M_7_Front_Bot.jpg	3666	1	2	0	
+t18	B4_23_pro_ri.jpg	1014	3	2	0	
+t19	D6_23_Profile_L.jpg	452	2	1	0	
+t20	N_5_Front_Half.jpg	156	1	3	0	
+t21	B6_23_pro_L.jpg	62	3	1	0	
+t22	Z_8_13_Pro_R_dark.jpg	32	2	2	1	
+t23	J_4_23_R_Pro.jpg	265	1	2	0	
+t24	B8_13_pro_R_HS.jpg	94	3	1	0	
+t25	M_4_23_R_Pro.jpg	140	1	3	0	
+t26	J_8_13_r_pro_dark.jpg	172	2	1	0	
+t27	Z_7_Front_Bot.jpg	93	2	2	1	
+t28	D4_23_profile_R.jpg	78	2	1	0	
+t29	N_6_23_L_Pro.jpg	63	1	1	1	
+t30	B5_halflit_frontal.jpg	31	3	3	1	
+
+-------SECTION END: no noise----------
+9	out of	30
+30.00%
+
+t31	Z_12_Front_Noisy.jpg	2153	2	2	1	
+t32	M_11_23_N_R_Pro.jpg	2480	3	3	1	
+t33	D10_Noisy_13_Profile_L.jpg	78	2	1	0	
+t34	J_12_Frontal_HS.jpg	593	3	1	0	
+t35	J_11_23_pro_R.jpg	78	1	3	0	
+t36	N_9_Front_LS.jpg	78	2	1	0	
+t37	B12_Noisy_frontal_HS.jpg	593	2	2	1	
+t38	M_12_Front_N_HS.jpg	125	1	1	1	
+t39	D12_Noisy_Frontal_HS.jpg	16	2	2	1	
+t40	Z_11_23_Pro_R.jpg	546	3	2	0	
+t41	N_10_13_L_Pro_dark.jpg	94	3	2	0	
+t42	B9_Noisy_frontal_LS.jpg	15	1	2	0	
+t43	M_9_Front_N_LS.jpg	530	1	1	1	
+t44	J_9_N_Frontal_50.jpg	218	1	2	0	
+t45	N_12_Front_Noisy.jpg	156	2	1	0	
+t46	B10_Noisy_13_pro_L.jpg	140	2	2	1	
+t47	N_11_23_R_Pro.jpg	140	2	3	0	
+t48	J_10_13_pro_l.jpg	125	1	1	1	
+t49	Z_9_Front_Noisy.jpg	250	3	3	1	
+t50	D9_Noisy_Frontal_LS.jpg	343	3	1	0	
+t51	M_10_N_13_L_Pro_D.jpg	93	1	1	1	
+t52	Z_10_13_Pro_L.jpg	110	3	1	0	
+t53	B11_Noise_23_pro_R.jpg	124	1	1	1	
+t54	D11_Noisy_23_profile_R.jpg	78	3	3	1	
+
+-------SECTION END: noise   ----------
+12	out of	24
+50.00%
+
+t55	N_IF.jpg	16	1	3	0	
+t56	Z_OE.jpg	94	3	2	0	
+t57	D_OE.jpg	94	2	2	1	
+t58	M_P.jpg	31	1	2	0	
+t59	J_S.jpg	125	2	2	1	
+t60	D_HU.jpg	63	2	3	0	
+t61	B_S.jpg	110	3	1	0	
+t62	D_P.jpg	78	1	2	0	
+t63	Z_IF.jpg	422	2	1	0	
+t64	J_IF.jpg	343	1	2	0	
+t65	M_OE.jpg	328	3	3	1	
+t66	B_P.jpg	437	1	3	0	
+t67	M_HU.jpg	78	2	3	0	
+t68	Z_HU.jpg	63	3	3	1	
+t69	N_S.jpg	15	1	3	0	
+t70	D_IF.jpg	31	3	3	1	
+t71	B_OE.jpg	546	2	2	1	
+t72	M_IF.jpg	234	1	1	1	
+t73	N_HU.jpg	796	2	2	1	
+t74	J_P.jpg	62	3	3	1	
+t75	M_S.jpg	47	2	1	0	
+t76	N_OE.jpg	577	1	1	1	
+t77	B_IF.jpg	62	2	1	0	
+t78	Z_S.jpg	16	2	2	1	
+t79	J_HU.jpg	562	3	2	0	
+t80	Z_P.jpg	31	2	3	0	
+t81	N_P.jpg	78	2	2	1	
+t82	J_OE.jpg	640	2	1	0	
+t83	B_HU.jpg	561	3	1	0	
+t84	D_S.jpg	499	2	1	0	
+
+-------SECTION END: difficult   ----------
+12	out of	30
+40.00%
+
+
+-------END OF TEST----------
+intro   :	14	out of	18
+no noise:	9	out of	30
+noise   :	12	out of	24
+difficult   :	12	out of	30
+Total:   	47	out of	102
+Percent: 	46.08%
+

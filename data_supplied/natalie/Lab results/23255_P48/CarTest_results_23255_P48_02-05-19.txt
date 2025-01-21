@@ -1,0 +1,104 @@
+Car Memory Test
+Date:	02-05-19
+Subject:	23255_P48
+This test run was upright (not inverted).
+
+event	picture	RT	response	target	correct
+p1	practice_v1.jpg	2632	1	1	1	PRACTICE - NOT COUNTED!!
+p2	practice_v3.jpg	1715	1	1	1	PRACTICE - NOT COUNTED!!
+p3	practice_v2.jpg	1087	2	2	1	PRACTICE - NOT COUNTED!!
+t1_v1	Slide4.JPG	3484	3	3	1	
+t1_v2	Slide5.JPG	3630	3	3	1	
+t1_v3	Slide6.JPG	2798	1	2	0	
+t2_v1	Slide10.JPG	1560	1	1	1	
+t2_v2	Slide11.JPG	8102	2	2	1	
+t2_v3	Slide12.JPG	1556	1	1	1	
+t3_v1	Slide16.JPG	4595	3	3	1	
+t3_v2	Slide17.JPG	2216	1	1	1	
+t3_v3	Slide18.JPG	1996	2	2	1	
+t4_v1	Slide22.JPG	5373	2	2	1	
+t4_v2	Slide23.JPG	3345	2	2	1	
+t4_v3	Slide24.JPG	3741	3	3	1	
+t5_v1	Slide28.JPG	5654	2	2	1	
+t5_v2	Slide29.JPG	3647	1	1	1	
+t5_v3	Slide30.JPG	2683	3	3	1	
+t6_v1	Slide34.JPG	2105	1	1	1	
+t6_v2	Slide35.JPG	1527	2	2	1	
+t6_v3	Slide36.JPG	3757	3	3	1	
+
+-------SECTION END: intro   ----------
+17	out of	18
+94.44%
+
+t2	Slide38.JPG	4970	2	2	1	
+t1	Slide39.JPG	6285	1	1	1	
+t3	Slide40.JPG	2800	1	1	1	
+t1	Slide41.JPG	2628	3	3	1	
+t6	Slide42.JPG	6296	2	2	1	
+t2	Slide43.JPG	2442	1	1	1	
+t1	Slide44.JPG	7129	3	3	1	
+t2	Slide45.JPG	3266	1	1	1	
+t4	Slide46.JPG	4756	1	1	1	
+t6	Slide47.JPG	8805	3	3	1	
+t4	Slide48.JPG	4796	3	3	1	
+t2	Slide49.JPG	2230	3	3	1	
+t2	Slide50.JPG	13461	3	2	0	
+t1	Slide51.JPG	9459	2	2	1	
+t5	Slide52.JPG	3254	3	3	1	
+t3	Slide53.JPG	7697	3	2	0	
+t1	Slide54.JPG	7242	1	1	1	
+t5	Slide55.JPG	9215	1	1	1	
+t3	Slide56.JPG	5550	2	2	1	
+t5	Slide57.JPG	10684	1	1	1	
+t3	Slide58.JPG	3970	3	1	0	
+t6	Slide59.JPG	13492	3	1	0	
+t4	Slide60.JPG	14040	3	3	1	
+t5	Slide61.JPG	24212	2	2	1	
+t4	Slide62.JPG	6793	2	2	1	
+t3	Slide63.JPG	7174	3	3	1	
+t6	Slide64.JPG	4112	2	2	1	
+t4	Slide65.JPG	10583	2	2	1	
+t5	Slide66.JPG	6461	2	1	0	
+t6	Slide67.JPG	4328	1	1	1	
+
+-------SECTION END: no noise----------
+25	out of	30
+83.33%
+
+t2	Slide69.JPG	4516	1	2	0	
+t1	Slide70.JPG	4944	3	3	1	
+t6	Slide71.JPG	6805	2	3	0	
+t3	Slide72.JPG	13437	1	1	1	
+t2	Slide73.JPG	6197	2	2	1	
+t4	Slide74.JPG	10264	1	2	0	
+t3	Slide75.JPG	5012	1	1	1	
+t2	Slide76.JPG	7599	1	1	1	
+t1	Slide77.JPG	2593	2	2	1	
+t5	Slide78.JPG	11882	1	1	1	
+t4	Slide79.JPG	4353	1	1	1	
+t2	Slide80.JPG	5285	3	3	1	
+t3	Slide81.JPG	5592	2	2	1	
+t1	Slide82.JPG	5061	3	3	1	
+t4	Slide83.JPG	6166	3	3	1	
+t6	Slide84.JPG	8119	1	2	0	
+t3	Slide85.JPG	4846	2	2	1	
+t4	Slide86.JPG	8412	2	2	1	
+t5	Slide87.JPG	6248	1	2	0	
+t6	Slide88.JPG	14411	2	2	1	
+t5	Slide89.JPG	4021	3	3	1	
+t1	Slide90.JPG	4183	3	3	1	
+t5	Slide91.JPG	9904	3	1	0	
+t6	Slide92.JPG	6080	3	3	1	
+
+-------SECTION END: noise   ----------
+18	out of	24
+75.00%
+
+
+-------END OF TEST----------
+intro   :	17	out of	18
+no noise:	25	out of	30
+noise   :	18	out of	24
+Total:   	60	out of	72
+Percent: 	83.33%
+

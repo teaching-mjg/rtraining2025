@@ -1,0 +1,140 @@
+Cambridge Face Memory Test
+Date:	14-12-18
+Subject:	23255_P03
+This test run was upright (not inverted).
+
+event	picture	RT	response	target	correct
+p1	pract_left.jpg	1406	1	1	1	PRACTICE - NOT COUNTED!!
+p2	pract_right.jpg	1801	2	2	1	PRACTICE - NOT COUNTED!!
+p3	pract_straight.jpg	962	2	2	1	PRACTICE - NOT COUNTED!!
+b1	B1_Identical_Left.jpg	1637	2	2	1	
+b2	B2_Identical_Frontal.jpg	1414	3	3	1	
+b3	B3_Identical_Right.jpg	2082	3	3	1	
+d1	D1_Identical_Left.jpg	2490	2	2	1	
+d2	D2_Identical_Frontal.jpg	1530	3	3	1	
+d3	D3_Identical_Right.jpg	1967	3	3	1	
+j1	J_1_Iden_L.jpg	1597	3	3	1	
+j2	J_2_Iden_Front.jpg	1374	3	3	1	
+j3	J_3_Iden_R.jpg	1472	1	1	1	
+m1	M_1_Iden_L.jpg	1546	2	2	1	
+m2	M_2_Iden_Front.jpg	1912	3	3	1	
+m3	M_3_Iden_R.jpg	1794	1	1	1	
+n1	N_1_Iden_L.jpg	1454	3	3	1	
+n2	N_2_Iden_Front.jpg	1341	1	1	1	
+n3	N_3_Iden_R.jpg	1700	3	3	1	
+z1	Z_1_Iden_L.jpg	1775	1	1	1	
+z2	Z_2_Iden_Front.jpg	1336	3	3	1	
+z3	Z_3_Iden_R.jpg	1171	1	1	1	
+
+-------SECTION END: intro   ----------
+18	out of	18
+100.00%
+
+t1	M_5_Front_Halflit.jpg	2533	1	1	1	
+t2	N_8_13_R_Pro_dark.jpg	1642	2	2	1	
+t3	Z_6_23_Pro_L.jpg	2125	1	1	1	
+t4	D5_Halflit_Frontal.jpg	1770	3	3	1	
+t5	B7_Bottomlit_Frontal.jpg	2149	3	3	1	
+t6	J_6_23_L_Pro.jpg	1825	2	2	1	
+t7	D7_Bottomlit_Frontal.jpg	1997	1	1	1	
+t8	Z_5_Front_Half.jpg	2397	3	3	1	
+t9	M_6_23_L_Pro.jpg	2393	2	2	1	
+t10	J_7_Bottom_Lit.jpg	1765	3	3	1	
+t11	N_4_23_R_Pro.jpg	1680	2	2	1	
+t12	M_8_13_R_Pro_dark.jpg	1742	3	3	1	
+t13	J_5_Front_Halflit.jpg	2276	2	2	1	
+t14	N_7_Front_Bot.jpg	2324	1	1	1	
+t15	Z_4_23_Pro_R.jpg	1357	2	2	1	
+t16	D8_13_Profile_R.jpg	4051	2	2	1	
+t17	M_7_Front_Bot.jpg	2828	2	2	1	
+t18	B4_23_pro_ri.jpg	1511	2	2	1	
+t19	D6_23_Profile_L.jpg	1465	1	1	1	
+t20	N_5_Front_Half.jpg	1935	3	3	1	
+t21	B6_23_pro_L.jpg	1555	1	1	1	
+t22	Z_8_13_Pro_R_dark.jpg	2840	2	2	1	
+t23	J_4_23_R_Pro.jpg	1473	2	2	1	
+t24	B8_13_pro_R_HS.jpg	1647	1	1	1	
+t25	M_4_23_R_Pro.jpg	1601	3	3	1	
+t26	J_8_13_r_pro_dark.jpg	2661	1	1	1	
+t27	Z_7_Front_Bot.jpg	1456	2	2	1	
+t28	D4_23_profile_R.jpg	1913	1	1	1	
+t29	N_6_23_L_Pro.jpg	1761	1	1	1	
+t30	B5_halflit_frontal.jpg	1437	3	3	1	
+
+-------SECTION END: no noise----------
+30	out of	30
+100.00%
+
+t31	Z_12_Front_Noisy.jpg	1807	2	2	1	
+t32	M_11_23_N_R_Pro.jpg	1437	3	3	1	
+t33	D10_Noisy_13_Profile_L.jpg	1995	3	1	0	
+t34	J_12_Frontal_HS.jpg	1586	1	1	1	
+t35	J_11_23_pro_R.jpg	1810	3	3	1	
+t36	N_9_Front_LS.jpg	2468	1	1	1	
+t37	B12_Noisy_frontal_HS.jpg	1108	2	2	1	
+t38	M_12_Front_N_HS.jpg	2608	1	1	1	
+t39	D12_Noisy_Frontal_HS.jpg	4147	2	2	1	
+t40	Z_11_23_Pro_R.jpg	1841	2	2	1	
+t41	N_10_13_L_Pro_dark.jpg	1862	2	2	1	
+t42	B9_Noisy_frontal_LS.jpg	908	2	2	1	
+t43	M_9_Front_N_LS.jpg	917	2	1	0	
+t44	J_9_N_Frontal_50.jpg	872	2	2	1	
+t45	N_12_Front_Noisy.jpg	1248	1	1	1	
+t46	B10_Noisy_13_pro_L.jpg	2605	2	2	1	
+t47	N_11_23_R_Pro.jpg	1501	3	3	1	
+t48	J_10_13_pro_l.jpg	1739	1	1	1	
+t49	Z_9_Front_Noisy.jpg	1603	3	3	1	
+t50	D9_Noisy_Frontal_LS.jpg	3017	1	1	1	
+t51	M_10_N_13_L_Pro_D.jpg	4400	1	1	1	
+t52	Z_10_13_Pro_L.jpg	4250	1	1	1	
+t53	B11_Noise_23_pro_R.jpg	2541	1	1	1	
+t54	D11_Noisy_23_profile_R.jpg	2382	3	3	1	
+
+-------SECTION END: noise   ----------
+22	out of	24
+91.67%
+
+t55	N_IF.jpg	1470	3	3	1	
+t56	Z_OE.jpg	4977	2	2	1	
+t57	D_OE.jpg	2141	2	2	1	
+t58	M_P.jpg	2499	2	2	1	
+t59	J_S.jpg	3488	2	2	1	
+t60	D_HU.jpg	5779	3	3	1	
+t61	B_S.jpg	2002	1	1	1	
+t62	D_P.jpg	1753	2	2	1	
+t63	Z_IF.jpg	6922	3	1	0	
+t64	J_IF.jpg	4854	2	2	1	
+t65	M_OE.jpg	3587	3	3	1	
+t66	B_P.jpg	3379	3	3	1	
+t67	M_HU.jpg	3802	3	3	1	
+t68	Z_HU.jpg	3407	3	3	1	
+t69	N_S.jpg	2883	3	3	1	
+t70	D_IF.jpg	1633	3	3	1	
+t71	B_OE.jpg	2071	2	2	1	
+t72	M_IF.jpg	1267	3	1	0	
+t73	N_HU.jpg	5601	1	2	0	
+t74	J_P.jpg	1808	3	3	1	
+t75	M_S.jpg	3170	1	1	1	
+t76	N_OE.jpg	2051	3	1	0	
+t77	B_IF.jpg	2077	1	1	1	
+t78	Z_S.jpg	2759	3	2	0	
+t79	J_HU.jpg	2176	2	2	1	
+t80	Z_P.jpg	2148	3	3	1	
+t81	N_P.jpg	1762	2	2	1	
+t82	J_OE.jpg	2975	3	1	0	
+t83	B_HU.jpg	3901	1	1	1	
+t84	D_S.jpg	1712	3	1	0	
+
+-------SECTION END: difficult   ----------
+23	out of	30
+76.67%
+
+
+-------END OF TEST----------
+intro   :	18	out of	18
+no noise:	30	out of	30
+noise   :	22	out of	24
+difficult   :	23	out of	30
+Total:   	93	out of	102
+Percent: 	91.18%
+
