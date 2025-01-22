@@ -1,6 +1,6 @@
 # Natalie
 
-## Natalie's files
+## Natalie Method 1
 
  have around 100 individual data files for the Cambridge Face Memory Test long form, The Cambridge car test, a 3 back task (RESULTS_FILE) and the models memory test (23255_P01). All the example files for a participant are attached. I want to be able to collate the data across participants and calculate performance – each file type has a different structure, and some already have a performance summary that can be extracted.
  
@@ -12,15 +12,16 @@ library(knitr)
 
 ```{r}
 data_dir = "data_supplied/natalie"
-files_list = list.files(data_dir, full.names = T)
+files_list = list.files(data_dir, full.names = T, pattern="*.csv|*.txt")
 files_list %>% kable(col.names = NULL)
 ```
 
-### File 1
+### File 1 Models Memory Task
 
 Read in the file.
 
 ```{r, message=F}
+print(files_list[1])
 file1 = read_csv(files_list[1], show_col_types = FALSE)
 ```
 
@@ -58,7 +59,7 @@ file1 %>%
   kable(digits=3)
 ```
 
-### File 2
+### File 2 Car Test
 
 This is a plain text file so `read_csv` isn't the right tool. 
 
@@ -236,13 +237,13 @@ summary_stats_with_calculations_producing_correct_result %>%
 The explanation of the difference is that summarising over condition means gives equal weight to each condition, whereas summarising over trials gives a weight to each condition proportional to the number of trials in the condition -- if the conditions have different numbers of trials, the two ways of calculating grand means will yield different results. 
 
 
-### File 3
+### File 3 Cambridge Face Memory Test
 
 ```{r}
 readLines(files_list[3])
 ```
 
-### File 4
+### File 4 3-back task
 
 ```{r}
 files_list[4]
@@ -361,4 +362,241 @@ ggplot(data = file4 %>% filter(sameord != "0"), aes(y=accuracy, x=sameord, color
   stat_summary(fun.data=mean_cl_normal)
 ```
 
+
+## Natalie method 2: With all files
+
+* Cambridge Face Memory Test long form, 
+* The Cambridge car test, 
+* a 3 back task (RESULTS_FILE) 
+* models memory test (23255_P01). **MMT**
+
+### Wrangling
+
+Get subject names for models memory test
+
+```{r}
+subjectsmmt = tools::file_path_sans_ext(list.files("data_supplied/natalie/MMT_results/")) %>% as_tibble_col()
+```
+
+Get subject names for all other tests
+
+```{r}
+subjects3tests = list.files("data_supplied/natalie/Lab results/") %>% as_tibble_col()
+```
+
+There are different amounts of subjects and they have different folder names. It's usually better to arrive at consistent file-name structures before going into R.
+
+```{r}
+nrow(subjectsmmt)
+```
+
+```{r}
+nrow(subjects3tests)
+```
+
+However the first 65 folders have consistent naming schemes, so let's use those.
+
+```{r}
+subjectsmmt = subjectsmmt[1:65,]
+subjects3tests = subjects3tests[1:65,]
+```
+
+Check that they have the same names
+
+```{r}
+names(subjectsmmt) == names(subjects3tests)
+```
+
+### Data Structure
+
+Let's use a list with tasks as the elements contained in tibbles.
+
+```{r}
+tasks = c("Memory", "Car", "Face", "Face Summary", "Nback", "Nback Summary")
+subjects = subjectsmmt$value
+alld = list()
+for (subject in subjects){
+  alld[[subject]] = list()
+  for (task in tasks){
+    alld[[subject]][[task]]=tibble()
+  }
+}
+```
+
+We can refer using numeric or named indices
+
+```{r, eval=F}
+alld[['23255_P01']][['Memory']]
+alld[[65]][[2]]
+```
+
+```{r, eval=F}
+head(alld)
+```
+
+### Loop
+
+Now we can set about bringing in the different results files and assigning them to the proper participant.
+
+#### Models Memory Task
+
+```{r}
+mmt_folders = "data_supplied/natalie/MMT_results" 
+mmt_files = list.files(mmt_folders, full.names = TRUE)
+
+for (mmt in mmt_files){
+  if(tools::file_path_sans_ext(basename(mmt)) %in% subjects3tests$value){
+    subject = tools::file_path_sans_ext(basename(mmt))
+    task = "Models Memory Task"
+    fin=read_csv(mmt, show_col_types = F) %>% 
+      mutate(subject=subject) %>% 
+      relocate(subject) %>% 
+      select(-`Participant Code`) %>%
+      mutate(task = task) %>% relocate(task, .before = subject) %>% 
+      rename(image_name = `Image Name`, correct_response = `Correct Response`, actual_response = `Participant Response`, accuracy = `Response Correct`)
+    
+    alld[[subject]][['Memory']] = fin
+  }
+}
+```
+
+#### Car Test
+
+```{r, warning=F}
+car_folders = list.files("data_supplied/natalie/Lab results", full.names = T)
+
+
+for (car_folder in car_folders){
+  if(basename(car_folder) %in% subjects3tests$value){
+    subject = basename(car_folder)
+    task = "Car Test"
+    car_file = list.files(car_folder, pattern = "^Car", full.names = T)
+    fin = suppressWarnings(read_delim(
+      show_col_types = F,
+      car_file,
+      delim="\t",
+      skip=9,
+      col_names = FALSE) %>%
+      filter(str_detect(X1, '^t')))
+    names(fin) = c("event", "picture", "RT", "response", "target", "correct", "ignore")
+    fin = fin %>% 
+      select(-ignore) %>% 
+      mutate(subject=subject) %>% relocate(subject) %>% 
+      mutate(task = task) %>% relocate(task, .before = subject)
+    
+    alld[[subject]][['Car']] = fin
+  }
+}
+```
+
+
+#### Cambridge Face Memory Test
+
+```{r, warning=F}
+face_folders = list.files("data_supplied/natalie/Lab results", full.names = T)
+
+for (face_folder in face_folders){
+  if(basename(face_folder) %in% subjects3tests$value){
+    subject = basename(face_folder)
+    task = "Cambrisge Face Memory Task"
+    face_file = list.files(face_folder, pattern = "^CMTF", full.names = T)
+    
+    fin = suppressWarnings(read_delim(face_file, delim='\t', skip=5, show_col_types = F)) %>% 
+      separate_wider_delim(correct, delim='\t', names=c("correct", "phase")) %>% 
+      mutate(phase=ifelse(phase=="", "experimental", phase)) %>% 
+      mutate(subject = subject) %>% relocate(subject) %>% 
+      mutate(task = task) %>% relocate(task, .before = subject)
+    
+    extracted_summary = suppressWarnings(fin %>% 
+      filter(is.na(target)) %>% 
+      mutate(response=parse_number(response),
+             RT=parse_number(RT),
+             max_possible=coalesce(response, RT),
+             score_component_of_event = as.numeric(event),
+             score_component_of_picture = as.numeric(picture),
+             score=coalesce(score_component_of_event, score_component_of_picture)) %>% 
+      relocate(score, .before=max_possible) %>% 
+      select(c(subject, event, score, max_possible)) %>% 
+      mutate(percent_score = 100*(score / max_possible)) %>% 
+      mutate(event=str_remove_all(event, "-")) %>% 
+      slice_tail(n=6) %>% slice_head(n=5) %>% 
+      mutate(event = str_remove(event, ":"),
+             event = str_squish(event))) %>% 
+      mutate(task = task) %>% relocate(task, .before = subject) 
+    
+    alld[[subject]][['Face']] = fin
+    alld[[subject]][['Face Summary']] = extracted_summary
+  
+    }
+}
+```
+
+#### Nback
+
+```{r, warning=F}
+nback_folders = list.files("data_supplied/natalie/Lab results", full.names = T)
+
+for (nback_folder in nback_folders){
+  if(basename(nback_folder) %in% subjects3tests$value){
+    subject = basename(nback_folder)
+    task = "Nback"
+    nback_file = list.files(nback_folder, 
+                            pattern = "^RESULTS", 
+                            full.names = T)
+    
+    fin = suppressWarnings(read_delim(face_file, delim='\t', skip=5, show_col_types = F) %>% 
+      separate_wider_delim(correct, delim='\t', names=c("correct", "phase"))  %>% 
+      mutate(phase=ifelse(phase=="", "experimental", phase)) %>%
+      mutate(subject = subject) %>% relocate(subject)) %>% 
+      mutate(task = task) %>% relocate(task, .before = subject)
+     
+    extracted_summary = suppressWarnings(fin %>%
+      filter(is.na(target)) %>%
+      mutate(response=parse_number(response),
+             RT=parse_number(RT),
+             max_possible=coalesce(response, RT),
+             score_component_of_event = as.numeric(event),
+             score_component_of_picture = as.numeric(picture),
+             score=coalesce(score_component_of_event, score_component_of_picture)) %>%
+      relocate(score, .before=max_possible) %>%
+      select(c(subject, event, score, max_possible)) %>%
+      mutate(percent_score = 100*(score / max_possible)) %>%
+      mutate(event=str_remove_all(event, "-")) %>%
+      slice_tail(n=6) %>% slice_head(n=5) %>%
+      mutate(event = str_remove(event, ":"),
+             event = str_squish(event))) %>% 
+      mutate(task = task) %>% relocate(task, .before = subject)
+
+    alld[[subject]][['Nback']] = fin
+    alld[[subject]][['Nback Summary']] = extracted_summary
+
+    }
+}
+```
+
+#### Putting it al together
+
+This seeems to make a list-column
+
+```{r}
+allsubs=tibble()
+j=0
+for(i in subjects3tests$value){
+  j=j+1
+  mem   = nest(alld[[i]][['Memory']], .by=subject, .key="Mem")
+  car   = nest(alld[[i]][['Car']], .by=subject, .key="Car")
+  face  = nest(alld[[i]][['Face']], .by=subject, .key="Face")
+  nback = nest(alld[[i]][['Nback']], .by=subject, .key="Nback")
+  alltasks = left_join(mem, car)
+  alltasks = left_join(alltasks, face)
+  alltasks = left_join(alltasks, nback)
+  allsubs[j,"subject"] = alltasks$subject
+
+  allsubs[j,"car"] = list(alltasks$Car)
+  allsubs[j,"mem"] = list(alltasks$Mem)
+  allsubs[j,"face"] = list(alltasks$Face)
+  allsubs[j,"Nback"] = list(alltasks$Nback)
+}
+
+```
 
