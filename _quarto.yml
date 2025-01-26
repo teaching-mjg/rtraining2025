@@ -11,8 +11,6 @@ book:
     - index.qmd
     - file_handling.qmd
     - analysis.qmd
-    - plots.qmd
-    - markdown.qmd
     - natalie.qmd
     - natasha.qmd
     - chinwe.qmd

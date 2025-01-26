@@ -1,4 +1,0 @@
-# TODO
-
-* Natalie's 4 files come from the same participant. We want a single file representing that participant's performance for task 1, task 2, task 3, and task 4. Use a list of tibbles and single values.
-

@@ -1,3 +1,0 @@
-# Markdown for reports
-
-markdown allows you to make a document detailing your code and its outputs (datasets, plots, etc)

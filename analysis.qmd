@@ -91,6 +91,9 @@ ANOVA_OUTPUT =
 ANOVA_OUTPUT$ANOVA %>% select(-ges) %>% kable(row.names = F, digits=4)
 ```
 
+ygrvgr iursvgiuewqviurewuvi 
+
+
 ```{r}
 ggplot(data=participant_means, aes(y=mean_score, x=condition, color=condition))+
   #geom_violin()+
