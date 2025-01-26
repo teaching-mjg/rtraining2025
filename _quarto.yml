@@ -13,7 +13,7 @@ book:
     - analysis.qmd
     - natalie.qmd
     - natasha.qmd
-    - chinwe.qmd
+    #- chinwe.qmd
 
 format:
   html:

@@ -2,7 +2,7 @@
 
 ## Natalie Method 1
 
- have around 100 individual data files for the Cambridge Face Memory Test long form, The Cambridge car test, a 3 back task (RESULTS_FILE) and the models memory test (23255_P01). All the example files for a participant are attached. I want to be able to collate the data across participants and calculate performance – each file type has a different structure, and some already have a performance summary that can be extracted.
+I have around 100 individual data files for the Cambridge Face Memory Test long form, The Cambridge car test, a 3 back task (RESULTS_FILE) and the models memory test (23255_P01). All the example files for a participant are attached. I want to be able to collate the data across participants and calculate performance – each file type has a different structure, and some already have a performance summary that can be extracted.
  
 ```{r, echo=F, message=F}
 library(tidyverse)
@@ -578,7 +578,7 @@ for (nback_folder in nback_folders){
 
 This seeems to make a list-column
 
-```{r}
+```{r, message=FALSE}
 allsubs=tibble()
 j=0
 for(i in subjects3tests$value){
